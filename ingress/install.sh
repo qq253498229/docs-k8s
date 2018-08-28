@@ -5,4 +5,3 @@ docker tag registry.cn-qingdao.aliyuncs.com/wangdali/defaultbackend:1.4 gcr.io/g
 docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/defaultbackend:1.4
 
 kubectl apply -f mandatory.yaml
-kubectl apply -f service-nodeport.yaml

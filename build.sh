@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-asciidoctor readme.adoc
+asciidoctor index.adoc

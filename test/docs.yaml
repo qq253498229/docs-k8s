@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: docs
-        image: codeforfun/docs-k8s:0.0.4
+        image: codeforfun/docs-k8s:0.0.5
         imagePullPolicy: IfNotPresent
       restartPolicy: Always
   selector:

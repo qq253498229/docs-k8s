@@ -1,6 +1,6 @@
 = 阿里云安装k8s v1.11.1(ubuntu16.04)
 大胃王 <codeforfun@foxmail.cn>
-v0.0.4, 2018-08
+v0.0.5, 2018-08
 :toc:
 
 

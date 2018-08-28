@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version=0.0.2
+version=0.0.3
 
 asciidoctor readme.adoc
 docker build . -t codeforfun/docs-k8s:${version}

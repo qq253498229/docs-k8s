@@ -1,0 +1,22 @@
+== 安装
+
+=== 拉取git仓库
+
+```
+apt-get update && apt-get install -y git
+git clone
+```
+
+=== 安装docker
+
+```
+cd shell
+bash install-docker.sh
+```
+
+=== 安装kubeadm、kubelet、kubectl
+
+```
+cd shell
+bash install-k8s.sh
+```

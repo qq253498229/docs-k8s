@@ -1,3 +1,0 @@
-== 在线文档
-
-https://docs-k8s.codeforfun.cn[点击查看]

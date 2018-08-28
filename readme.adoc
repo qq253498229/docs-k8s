@@ -1,12 +1,14 @@
 = 阿里云安装k8s v1.11.1(ubuntu16.04)
 大胃王 <codeforfun@foxmail.cn>
-v1.0, 2018-08
+v0.0.4, 2018-08
 :toc:
+
+
 
 include::docs/install.adoc[]
 include::docs/start.adoc[]
 include::docs/install-ingress.adoc[]
-include::docs/online.adoc[]
 
+== 在线文档
 
-
+https://docs-k8s.codeforfun.cn[点击查看]

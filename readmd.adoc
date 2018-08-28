@@ -1,0 +1,76 @@
+= 阿里云安装k8s v1.11.1(ubuntu16.04)
+大胃王 <codeforfun@foxmail.cn>
+v1.0, 2018-08
+:toc:
+
+== 安装
+
+=== 拉取git仓库
+
+```
+apt-get update && apt-get install -y git
+git clone
+```
+
+=== 安装docker
+
+```
+cd shell
+bash install-docker.sh
+```
+
+=== 安装kubeadm、kubelet、kubectl
+
+```
+cd shell
+bash install-k8s.sh
+```
+
+== 启动k8s
+
+=== 拉取google镜像
+
+由于大部分运行需要的镜像都是google镜像，国内无法拉取，我这里使用了阿里云的镜像仓库作为中转，如果自己有梯子可以忽略这一步操作:
+
+```
+cd shell
+bash pull-google-images.sh
+```
+
+=== 初始化K8S集群
+
+这里10.244.0.0/16是flannel用的，如果使用其他的请根据需要变更:
+
+```
+kubeadm init --kubernetes-version=v1.11.1 --pod-network-cidr 10.244.0.0/16
+```
+
+之后需要根据提示执行命令，一般来讲是这样的:
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+=== 安装pod网络附加组件(这里选择flannel，可以根据需求变更)
+
+```
+sysctl net.bridge.bridge-nf-call-iptables=1
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
+```
+
+=== 允许master节点部署pod(Optional)
+
+k8s由于安全考虑，默认情况下禁止了master节点部署pod，所以需要手动激活，如果不想在master节点部署pod则不需要执行
+
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+
+== 安装ingress
+
+```
+cd ingress
+bash install.sh
+```

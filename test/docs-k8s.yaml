@@ -15,7 +15,7 @@ spec:
       containers:
       - name: docs
         image: codeforfun/docs-k8s:0.0.6
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
       restartPolicy: Always
   selector:
     matchLabels:

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo $(kubectl -n kube-system get secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}') --output=jsonpath={.data.token})
+kubectl describe secret -n kube-system $(kubectl get secret -n kube-system | grep admin-user | awk '{print $1}')

@@ -1,6 +1,6 @@
 = 阿里云安装k8s v1.11.1(ubuntu16.04)
 大胃王 <codeforfun@foxmail.cn>
-v0.0.6, 2018-08
+2018-08
 :toc:
 
 
@@ -8,6 +8,7 @@ v0.0.6, 2018-08
 include::docs/install.adoc[]
 include::docs/start.adoc[]
 include::docs/install-ingress.adoc[]
+include::docs/install-dashboard.adoc[]
 
 == 在线文档
 

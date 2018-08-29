@@ -7,6 +7,20 @@ cd dashboard
 bash start.sh
 ```
 
+=== 查看端口
+
+```
+cd dashboard
+bash show-port.sh
+```
+
+=== 查看token
+
+```
+cd dashboard
+bash show-token.sh
+```
+
 === 停止
 
 ```

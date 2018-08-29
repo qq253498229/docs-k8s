@@ -437,7 +437,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">大胃王</span><br>
 <span id="email" class="email"><a href="mailto:codeforfun@foxmail.cn">codeforfun@foxmail.cn</a></span><br>
-<span id="revnumber">version 0.0.6,</span>
 <span id="revdate">2018-08</span>
 </div>
 <div id="toc" class="toc">
@@ -459,6 +458,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_安装ingress">安装ingress</a></li>
+<li><a href="#_安装dashboard">安装dashboard</a>
+<ul class="sectlevel2">
+<li><a href="#_启动">启动</a></li>
+<li><a href="#_查看端口">查看端口</a></li>
+<li><a href="#_查看token">查看token</a></li>
+<li><a href="#_停止">停止</a></li>
+</ul>
+</li>
 <li><a href="#_在线文档">在线文档</a></li>
 </ul>
 </div>
@@ -566,6 +573,47 @@ bash install.sh</code></pre>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_安装dashboard">安装dashboard</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_启动">启动</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>cd dashboard
+bash start.sh</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_查看端口">查看端口</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>cd dashboard
+bash show-port.sh</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_查看token">查看token</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>cd dashboard
+bash show-token.sh</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_停止">停止</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>cd dashboard
+bash stop.sh</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_在线文档">在线文档</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -576,8 +624,7 @@ bash install.sh</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.0.6<br>
-Last updated 2018-08-28 21:22:05 CST
+Last updated 2018-08-30 01:19:09 CST
 </div>
 </div>
 </body>

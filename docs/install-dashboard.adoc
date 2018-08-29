@@ -1,0 +1,15 @@
+== 安装dashboard
+
+=== 启动
+
+```
+cd dashboard
+bash start.sh
+```
+
+=== 停止
+
+```
+cd dashboard
+bash stop.sh
+```

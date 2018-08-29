@@ -1,4 +1,4 @@
-= 阿里云安装k8s v1.11.1(ubuntu16.04)
+= Kubernetes入门 v1.11.1(ubuntu16.04)
 大胃王 <codeforfun@foxmail.cn>
 2018-08
 :toc:

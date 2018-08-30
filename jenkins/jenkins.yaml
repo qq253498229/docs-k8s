@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: jenkins
+      labels:
+        app: jenkins
+    spec:
+      containers:
+      - name: jenkins
+        image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins:latest
+        imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: jenkins
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins
+spec:
+  selector:
+    app: jenkins
+  ports:
+  - port: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins
+spec:
+  tls:
+  - hosts:
+    - jenkins.codeforfun.cn
+    secretName: jenkins.codeforfun.cn-secret
+  rules:
+  - host: jenkins.codeforfun.cn
+    http:
+      paths:
+      - backend:
+          serviceName: jenkins
+          servicePort: 8080

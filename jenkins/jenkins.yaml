@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins:latest
+        image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins:2.121.3
         imagePullPolicy: Always
       restartPolicy: Always
   selector:

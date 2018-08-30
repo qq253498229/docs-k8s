@@ -13,9 +13,11 @@ docker tag registry.cn-qingdao.aliyuncs.com/wangdali/tiller:v2.10.0 gcr.io/kuber
 docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/tiller:v2.10.0
 
 # 如果是client端可以加入 --client-only 命令
-helm init --stable-repo-url https://aliacs-app-catalog.oss-cn-hangzhou.aliyuncs.com/charts/
-helm repo add incubator https://aliacs-app-catalog.oss-cn-hangzhou.aliyuncs.com/charts-incubator/
-helm repo update
+#helm init --stable-repo-url https://aliacs-app-catalog.oss-cn-hangzhou.aliyuncs.com/charts/
+#helm repo add incubator https://aliacs-app-catalog.oss-cn-hangzhou.aliyuncs.com/charts-incubator/
+#helm repo update
+helm init --upgrade -i registry.cn-qingdao.aliyuncs.com/wangdali/tiller:v2.10.0 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+
 
 # 创建身份
 kubectl create serviceaccount --namespace kube-system tiller

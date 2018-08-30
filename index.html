@@ -489,8 +489,7 @@ chmod +x -R *.sh</code></pre>
 <h3 id="_安装docker">安装docker</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd shell
-bash install-docker.sh</code></pre>
+<pre class="highlight"><code>(cd shell &amp;&amp; ./install-docker.sh)</code></pre>
 </div>
 </div>
 </div>
@@ -498,8 +497,7 @@ bash install-docker.sh</code></pre>
 <h3 id="_安装kubeadmkubeletkubectl">安装kubeadm、kubelet、kubectl</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd shell
-bash install-k8s.sh</code></pre>
+<pre class="highlight"><code>(cd shell &amp;&amp; ./install-k8s.sh)</code></pre>
 </div>
 </div>
 </div>
@@ -515,8 +513,7 @@ bash install-k8s.sh</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd shell
-bash pull-google-images.sh</code></pre>
+<pre class="highlight"><code>(cd shell &amp;&amp; ./pull-google-images.sh)</code></pre>
 </div>
 </div>
 </div>
@@ -568,8 +565,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Docume
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd ingress
-bash install.sh</code></pre>
+<pre class="highlight"><code>(cd ingress &amp;&amp; ./install.sh)</code></pre>
 </div>
 </div>
 </div>
@@ -581,8 +577,7 @@ bash install.sh</code></pre>
 <h3 id="_启动">启动</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd dashboard
-bash start.sh</code></pre>
+<pre class="highlight"><code>(cd dashboard &amp;&amp; ./start.sh)</code></pre>
 </div>
 </div>
 </div>
@@ -590,8 +585,7 @@ bash start.sh</code></pre>
 <h3 id="_查看端口">查看端口</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd dashboard
-bash show-port.sh</code></pre>
+<pre class="highlight"><code>(cd dashboard &amp;&amp; ./show-port.sh)</code></pre>
 </div>
 </div>
 </div>
@@ -599,8 +593,7 @@ bash show-port.sh</code></pre>
 <h3 id="_查看token">查看token</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd dashboard
-bash show-token.sh</code></pre>
+<pre class="highlight"><code>(cd dashboard &amp;&amp; ./show-token.sh)</code></pre>
 </div>
 </div>
 </div>
@@ -608,8 +601,7 @@ bash show-token.sh</code></pre>
 <h3 id="_停止">停止</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd dashboard
-bash stop.sh</code></pre>
+<pre class="highlight"><code>(cd dashboard &amp;&amp; ./stop.sh)</code></pre>
 </div>
 </div>
 </div>

@@ -12,13 +12,11 @@ chmod +x -R *.sh
 === 安装docker
 
 ```
-cd shell
-bash install-docker.sh
+(cd shell && ./install-docker.sh)
 ```
 
 === 安装kubeadm、kubelet、kubectl
 
 ```
-cd shell
-bash install-k8s.sh
+(cd shell && ./install-k8s.sh)
 ```

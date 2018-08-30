@@ -3,27 +3,23 @@
 === 启动
 
 ```
-cd dashboard
-bash start.sh
+(cd dashboard && ./start.sh)
 ```
 
 === 查看端口
 
 ```
-cd dashboard
-bash show-port.sh
+(cd dashboard && ./show-port.sh)
 ```
 
 === 查看token
 
 ```
-cd dashboard
-bash show-token.sh
+(cd dashboard && ./show-token.sh)
 ```
 
 === 停止
 
 ```
-cd dashboard
-bash stop.sh
+(cd dashboard && ./stop.sh)
 ```

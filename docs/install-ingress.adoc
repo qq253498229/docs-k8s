@@ -1,6 +1,5 @@
 == 安装ingress
 
 ```
-cd ingress
-bash install.sh
+(cd ingress && ./install.sh)
 ```

@@ -5,8 +5,7 @@
 由于大部分运行需要的镜像都是google镜像，国内无法拉取，我这里使用了阿里云的镜像仓库作为中转，如果自己有梯子可以忽略这一步操作:
 
 ```
-cd shell
-bash pull-google-images.sh
+(cd shell && ./pull-google-images.sh)
 ```
 
 === 初始化K8S集群

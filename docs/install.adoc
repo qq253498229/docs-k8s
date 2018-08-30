@@ -5,6 +5,8 @@
 ```
 apt-get update && apt-get install -y git
 git clone https://github.com/qq253498229/k8s.git
+cd k8s
+chmod +x -R *.sh
 ```
 
 === 安装docker

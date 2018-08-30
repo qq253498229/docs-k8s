@@ -9,12 +9,9 @@ include::docs/install.adoc[]
 include::docs/start.adoc[]
 include::docs/install-ingress.adoc[]
 include::docs/install-dashboard.adoc[]
+include::docs/install-helm.adoc[]
 
-== 安装Helm
 
-```
-(cd helm && ./install.sh)
-```
 
 == 在线文档
 

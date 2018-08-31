@@ -3,7 +3,7 @@
 helm_version=v2.10.0
 
 # 安装helm
-curl -s https://raw.githubusercontent.com/qq253498229/docs-helm/master/tars/helm-${helm_version}-linux-amd64.tar.gz  | tar zxvf -
+curl -s https://raw.githubusercontent.com/qq253498229/docs-helm/tars/helm-${helm_version}-linux-amd64.tar.gz  | tar zxvf -
 mv linux-amd64/helm /usr/local/bin/helm
 rm -rf linux-amd64
 
@@ -18,9 +18,23 @@ docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/tiller:v2.10.0
 #helm repo update
 helm init --upgrade -i registry.cn-qingdao.aliyuncs.com/wangdali/tiller:v2.10.0 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
 
-
-# 创建身份
 kubectl create serviceaccount --namespace kube-system tiller
 kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
 kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+helm init --upgrade \
+--service-account tiller \
+-i registry.cn-qingdao.aliyuncs.com/wangdali/tiller:v2.10.0 \
+--stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts \
+--tiller-namespace kube-system
+helm repo add stable https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+helm repo update
+
+
+
+
+https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+https://aliacs-app-catalog.oss-cn-hangzhou.aliyuncs.com/charts/
+
+# 创建身份
+
 helm init --service-account tiller --upgrade

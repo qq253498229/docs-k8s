@@ -3,7 +3,7 @@
 helm_version=v2.10.0
 
 # 安装helm
-curl -s https://raw.githubusercontent.com/qq253498229/docs-helm/tars/helm-${helm_version}-linux-amd64.tar.gz  | tar zxvf -
+curl -s https://codeforfun.oss-cn-beijing.aliyuncs.com/k8s/helm-${helm_version}-linux-amd64.tar.gz  | tar zxvf -
 mv linux-amd64/helm /usr/local/bin/helm
 rm -rf linux-amd64
 
@@ -32,8 +32,8 @@ helm repo update
 
 
 
-https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
-https://aliacs-app-catalog.oss-cn-hangzhou.aliyuncs.com/charts/
+#https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+#https://aliacs-app-catalog.oss-cn-hangzhou.aliyuncs.com/charts/
 
 # 创建身份
 

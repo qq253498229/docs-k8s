@@ -6,7 +6,3 @@
 ## 在线文档
 
 点击查看[在线文档](https://docs-k8s.codeforfun.cn/)
-
-## 贡献指南
-
-123

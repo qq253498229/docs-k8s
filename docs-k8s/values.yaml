@@ -24,7 +24,7 @@ ingress:
   path: /
   hosts:
     - docs-k8s.codeforfun.cn
-  tls: []
+  tls:
     - secretName: docs-k8s.codeforfun.cn-secret
       hosts:
         - docs-k8s.codeforfun.cn

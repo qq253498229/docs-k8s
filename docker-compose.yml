@@ -1,0 +1,7 @@
+version: "3"
+services:
+  app:
+    image: registry.cn-qingdao.aliyuncs.com/wangdali/docs-k8s:latest
+    build: .
+    ports:
+      - "8080:80"

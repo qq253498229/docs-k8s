@@ -10,9 +10,3 @@ include::docs/start.adoc[]
 include::docs/install-ingress.adoc[]
 include::docs/install-dashboard.adoc[]
 include::docs/install-helm.adoc[]
-
-
-
-== 在线文档
-
-https://docs-k8s.codeforfun.cn[点击查看]

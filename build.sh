@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-asciidoctor index.adoc
+asciidoctor docs/index.adoc

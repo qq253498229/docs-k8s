@@ -4,9 +4,8 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y asciidoctor
 
-COPY index.adoc .
 COPY docs ./docs
-RUN asciidoctor index.adoc
+RUN asciidoctor docs/index.adoc
 
 FROM nginx:1.15-alpine
 RUN rm -rf /usr/share/nginx/html/*

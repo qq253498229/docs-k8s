@@ -4,4 +4,4 @@
 
 ## 在线文档
 
-点击查看[在线文档](https://docs-k8s.codeforfun.cn/)
+点击查看[在线文档](https://qq253498229.github.io/docs-k8s/)

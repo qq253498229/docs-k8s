@@ -13,7 +13,7 @@
 这里10.244.0.0/16是flannel用的，如果使用其他的请根据需要变更:
 
 ```
-kubeadm init --kubernetes-version=v1.11.1 --pod-network-cidr 10.244.0.0/16
+kubeadm init --kubernetes-version=v1.13.3 --pod-network-cidr=10.244.0.0/16
 ```
 
 之后需要根据提示执行命令，一般来讲是这样的:
@@ -28,7 +28,13 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 ```
 sysctl net.bridge.bridge-nf-call-iptables=1
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
+
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/flannel:v0.11.0-amd64
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/flannel:v0.11.0-amd64 quay.io/coreos/flannel:v0.11.0-amd64
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/flannel:v0.11.0-amd64
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml
+
 ```
 
 === 允许master节点部署pod(Optional)

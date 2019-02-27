@@ -16,12 +16,19 @@
 kubeadm init --kubernetes-version=v1.13.3 --pod-network-cidr=10.244.0.0/16
 ```
 
-之后需要根据提示执行命令，一般来讲是这样的:
+之后需要根据提示执行命令，需要记住slaver节点连接集群的命令，一般来讲是这样的:
 
 ```
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+
+```
+kubeadm join your_master_ip:6443 \
+--token your_token \
+--discovery-token-ca-cert-hash your_token_sha356_cert
 ```
 
 === 安装pod网络附加组件(这里选择flannel，可以根据需求变更)

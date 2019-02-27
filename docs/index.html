@@ -467,6 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_安装helm">安装Helm</a></li>
+<li><a href="#_从节点slaver节点连接集群">从节点(slaver节点)连接集群</a></li>
 </ul>
 </div>
 </div>
@@ -528,13 +529,20 @@ chmod +x -R *.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>之后需要根据提示执行命令，一般来讲是这样的:</p>
+<p>之后需要根据提示执行命令，需要记住slaver节点连接集群的命令，一般来讲是这样的:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>kubeadm join your_master_ip:6443 \
+--token your_token \
+--discovery-token-ca-cert-hash your_token_sha356_cert</code></pre>
 </div>
 </div>
 </div>
@@ -622,10 +630,33 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be008450
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_从节点slaver节点连接集群">从节点(slaver节点)连接集群</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>拉取slaver节点所需镜像</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>(cd shell &amp;&amp; ./pull-google-images.sh)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>slaver节点连接集群(master节点初始化时候的命令)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>kubeadm join your_master_ip:6443 \
+--token your_token \
+--discovery-token-ca-cert-hash your_token_sha356_cert</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-02-26 01:32:11 +0800
+Last updated 2019-02-28 01:17:34 +0800
 </div>
 </div>
 </body>

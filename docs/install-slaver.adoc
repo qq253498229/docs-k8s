@@ -1,0 +1,15 @@
+== 从节点(slaver节点)连接集群
+
+拉取slaver节点所需镜像
+
+```
+(cd shell && ./pull-slaver-images.sh)
+```
+
+slaver节点连接集群(master节点初始化时候的命令)
+
+```
+kubeadm join your_master_ip:6443 \
+--token your_token \
+--discovery-token-ca-cert-hash your_token_sha356_cert
+```

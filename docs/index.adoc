@@ -1,6 +1,6 @@
 = Kubernetes入门 v1.13.3(ubuntu16.04)
-大胃王 <codeforfun@foxmail.cn>
-2019-02-26
+大胃王 <253498229@qq.com>
+2019-02-28
 :toc: left
 
 

@@ -13,7 +13,7 @@
 这里10.244.0.0/16是flannel用的，如果使用其他的请根据需要变更:
 
 ```
-kubeadm init --kubernetes-version=v1.13.3 --pod-network-cidr=10.244.0.0/16
+kubeadm init --kubernetes-version=v1.13.4 --pod-network-cidr=10.244.0.0/16
 ```
 
 之后需要根据提示执行命令，需要记住slaver节点连接集群的命令，一般来讲是这样的:

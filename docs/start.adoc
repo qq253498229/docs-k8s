@@ -44,7 +44,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be008450
 
 ```
 
-=== 允许master节点部署pod(Optional)
+=== 允许master节点部署pod(单节点测试环境需要执行这一步，集群不需要)
 
 k8s由于安全考虑，默认情况下禁止了master节点部署pod，所以需要手动激活，如果不想在master节点部署pod则不需要执行
 

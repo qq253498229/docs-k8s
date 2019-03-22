@@ -9,6 +9,12 @@ cd k8s
 chmod +x -R */*.sh
 ```
 
+=== 安装命令行工具
+
+```
+sudo apt-get update && sudo apt-get install -y curl wget git
+```
+
 === 安装docker
 
 ```

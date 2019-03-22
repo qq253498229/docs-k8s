@@ -13,7 +13,7 @@
 这里10.244.0.0/16是flannel用的，如果使用其他的请根据需要变更:
 
 ```
-kubeadm init --kubernetes-version=v1.13.3 --pod-network-cidr=10.244.0.0/16
+kubeadm init --kubernetes-version=v1.13.4 --pod-network-cidr=10.244.0.0/16
 ```
 
 之后需要根据提示执行命令，需要记住slaver节点连接集群的命令，一般来讲是这样的:
@@ -44,7 +44,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be008450
 
 ```
 
-=== 允许master节点部署pod(Optional)
+=== 允许master节点部署pod(单节点测试环境需要执行这一步，集群不需要)
 
 k8s由于安全考虑，默认情况下禁止了master节点部署pod，所以需要手动激活，如果不想在master节点部署pod则不需要执行
 

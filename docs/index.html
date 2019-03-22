@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
 <meta name="author" content="大胃王">
-<title>Kubernetes入门 v1.13.3(ubuntu16.04)</title>
+<title>Kubernetes入门 v1.13.4(ubuntu16.04)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -433,11 +433,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Kubernetes入门 v1.13.3(ubuntu16.04)</h1>
+<h1>Kubernetes入门 v1.13.4(ubuntu16.04)</h1>
 <div class="details">
 <span id="author" class="author">大胃王</span><br>
 <span id="email" class="email"><a href="mailto:253498229@qq.com">253498229@qq.com</a></span><br>
-<span id="revdate">2019-02-28</span>
+<span id="revdate">2019-03-22</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -445,6 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_安装">安装</a>
 <ul class="sectlevel2">
 <li><a href="#_拉取git仓库">拉取git仓库</a></li>
+<li><a href="#_安装命令行工具">安装命令行工具</a></li>
 <li><a href="#_安装docker">安装docker</a></li>
 <li><a href="#_安装kubeadmkubeletkubectl">安装kubeadm、kubelet、kubectl</a></li>
 </ul>
@@ -454,18 +455,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_拉取google镜像">拉取google镜像</a></li>
 <li><a href="#_初始化k8s集群">初始化K8S集群</a></li>
 <li><a href="#_安装pod网络附加组件这里选择flannel可以根据需求变更">安装pod网络附加组件(这里选择flannel，可以根据需求变更)</a></li>
-<li><a href="#_允许master节点部署podoptional">允许master节点部署pod(Optional)</a></li>
+<li><a href="#_允许master节点部署pod单节点测试环境需要执行这一步集群不需要">允许master节点部署pod(单节点测试环境需要执行这一步，集群不需要)</a></li>
 </ul>
 </li>
 <li><a href="#_安装ingress">安装ingress</a></li>
-<li><a href="#_安装dashboard">安装dashboard</a>
-<ul class="sectlevel2">
-<li><a href="#_启动">启动</a></li>
-<li><a href="#_查看端口">查看端口</a></li>
-<li><a href="#_查看token">查看token</a></li>
-<li><a href="#_停止">停止</a></li>
-</ul>
-</li>
 <li><a href="#_安装helm">安装Helm</a></li>
 <li><a href="#_从节点slaver节点连接集群">从节点(slaver节点)连接集群</a></li>
 </ul>
@@ -483,6 +476,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 git clone https://github.com/qq253498229/k8s.git
 cd k8s
 chmod +x -R */*.sh</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_安装命令行工具">安装命令行工具</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get update &amp;&amp; sudo apt-get install -y curl wget git</code></pre>
 </div>
 </div>
 </div>
@@ -525,7 +526,7 @@ chmod +x -R */*.sh</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>kubeadm init --kubernetes-version=v1.13.3 --pod-network-cidr=10.244.0.0/16</code></pre>
+<pre class="highlight"><code>kubeadm init --kubernetes-version=v1.13.4 --pod-network-cidr=10.244.0.0/16</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -561,7 +562,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be008450
 </div>
 </div>
 <div class="sect2">
-<h3 id="_允许master节点部署podoptional">允许master节点部署pod(Optional)</h3>
+<h3 id="_允许master节点部署pod单节点测试环境需要执行这一步集群不需要">允许master节点部署pod(单节点测试环境需要执行这一步，集群不需要)</h3>
 <div class="paragraph">
 <p>k8s由于安全考虑，默认情况下禁止了master节点部署pod，所以需要手动激活，如果不想在master节点部署pod则不需要执行</p>
 </div>
@@ -579,43 +580,6 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be008450
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>(cd ingress &amp;&amp; ./install.sh)</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_安装dashboard">安装dashboard</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_启动">启动</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>(cd dashboard &amp;&amp; ./start.sh)</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_查看端口">查看端口</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>(cd dashboard &amp;&amp; ./show-port.sh)</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_查看token">查看token</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>(cd dashboard &amp;&amp; ./show-token.sh)</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_停止">停止</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>(cd dashboard &amp;&amp; ./stop.sh)</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -656,7 +620,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be008450
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-02-28 10:46:55 +0800
+Last updated 2019-03-22 17:54:08 +0800
 </div>
 </div>
 </body>

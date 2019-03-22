@@ -1,6 +1,6 @@
-= Kubernetes入门 v1.13.3(ubuntu16.04)
+= Kubernetes入门 v1.13.4(ubuntu16.04)
 大胃王 <253498229@qq.com>
-2019-02-28
+2019-03-22
 :toc: left
 
 
@@ -8,6 +8,6 @@
 include::install.adoc[]
 include::start.adoc[]
 include::install-ingress.adoc[]
-include::install-dashboard.adoc[]
+//include::install-dashboard.adoc[]
 include::install-helm.adoc[]
 include::install-slaver.adoc[]
